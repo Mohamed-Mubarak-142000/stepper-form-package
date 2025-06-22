@@ -1,5 +1,5 @@
 {
-  "name": "react-hook-form-stepper",
+  "name": "react-form-stepper-mantine",
   "version": "1.0.0",
   "description": "A customizable stepper form component built with React Hook Form and Mantine",
   "main": "dist/index.js",
@@ -29,10 +29,10 @@
     "react-hook-form",
     "mantine"
   ],
-  "author": "Your Name",
+  "author": "Mohamed Mubarak",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/react-hook-form-stepper.git"
+    "url": "git+https://github.com/Mohamed-Mubarak-142000/stepper-form-package.git"
   }
 }
