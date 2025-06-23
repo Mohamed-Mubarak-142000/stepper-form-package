@@ -1,0 +1,39 @@
+{
+  "name": "react-multi-form-step",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "stepper",
+    "multi-step",
+    "react-hook-form",
+    "mantine"
+  ],
+  "author": "Mohamed Mubarak",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohamed-Mubarak-142000/stepper-form-package.git"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "@mantine/core": "^8.1.1",
+    "@tabler/icons-react": "^3.34.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.58.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3"
+  }
+}
