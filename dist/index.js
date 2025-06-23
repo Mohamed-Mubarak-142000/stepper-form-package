@@ -14,5 +14,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+<<<<<<< HEAD
 __exportStar(require("./components/stepper-form"), exports);
+=======
+__exportStar(require("./component/stepper-form"), exports);
+>>>>>>> e045b5c1acb64f895ec103ec91587d90eb2cf9e3
 __exportStar(require("./hooks/use-stepper"), exports);
