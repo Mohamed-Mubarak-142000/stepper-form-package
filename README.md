@@ -116,6 +116,63 @@ import { IconCircleArrowRight } from "@tabler/icons-react";
 />
 
 
+🧩 Optional: External FormProvider Usage
+In some cases, you might want to wrap the <StepperForm /> with your own <FormProvider>.
+This gives you full access to the form context (useFormContext()) outside the stepper, for example:
+
+When you want to access formMethods in a parent component (like App or AddUserPage)
+
+When you need to show global form errors or track submission state externally
+
+When you want to conditionally render something based on form values before or after the stepper
+
+🛠️ How to use your own FormProvider
+If you need to control the form context manually, wrap your StepperForm like this:
+
+tsx
+Copy
+Edit
+import { useForm, FormProvider } from "react-hook-form";
+
+const formMethods = useForm();
+
+<FormProvider {...formMethods}>
+  <StepperForm
+    steps={steps}
+    onSubmit={handleSubmit}
+    formMethods={formMethods}
+  />
+</FormProvider>
+
+
+⚠️ If you wrap StepperForm with your own <FormProvider>, make sure not to pass formOptions to the component, since you're already initializing the form externally.
+
+❓ Why would I need this?
+By default, StepperForm creates and provides its own form context internally.
+But if you want to:
+
+Access formMethods outside the stepper
+
+Share form state across other components or outside the scope of steps
+
+Add your own custom validation or side-effects globally
+
+Then using an external FormProvider gives you maximum flexibility.
+
+🧠 Best Practice
+If you're building a larger form with custom header, logic, and external controls, we recommend you manage the form instance externally and pass it via formMethods.
+This makes your form more composable and testable.
+
+✅ Final Tip
+You can choose one of two approaches:
+
+Let StepperForm handle everything internally (simpler for small forms)
+
+Manage the form yourself and pass formMethods and <FormProvider> (better for full control)
+
+Both are supported — it's up to your use case. 🎯
+
+
 
 ⚙️ Props Reference
 Prop	Type	Required	Description
@@ -170,3 +227,4 @@ Feel free to open issues for bugs, suggestions, or feature requests.
     🌐 React Hook Form: https://react-hook-form.com
 
     📚 Mantine UI: https://mantine.dev
+```

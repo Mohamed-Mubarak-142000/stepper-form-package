@@ -2,7 +2,6 @@ import { useCallback, useState } from "react";
 import { Stepper, StepperProps } from "@mantine/core";
 import {
   useForm,
-  FormProvider,
   UseFormReturn,
   FieldValues,
   SubmitHandler,
@@ -117,42 +116,40 @@ export const StepperForm = <T extends FieldValues>({
   }, [activeStep, steps, trigger, clearErrors]);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-        {header?.({
-          nextStep: handleNext,
-          prevStep,
-          isLastStep,
-          activeStep,
-          methods,
-        })}
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+      {header?.({
+        nextStep: handleNext,
+        prevStep,
+        isLastStep,
+        activeStep,
+        methods,
+      })}
 
-        <Stepper
-          className="p-10 rounded-xl bg-basic-white shadow-form-sheet"
-          active={activeStep}
-          completedIcon={icons?.completed}
-          {...stepperProps}
-        >
-          {steps.map((step, index) => (
-            <Stepper.Step
-              key={index}
-              label={step.label}
-              description={step.description}
-              icon={activeStep === index ? icons?.active : undefined}
-            >
-              <div className="mt-6">{step.component}</div>
-            </Stepper.Step>
-          ))}
-        </Stepper>
+      <Stepper
+        className="p-10 rounded-xl bg-basic-white shadow-form-sheet"
+        active={activeStep}
+        completedIcon={icons?.completed}
+        {...stepperProps}
+      >
+        {steps.map((step, index) => (
+          <Stepper.Step
+            key={index}
+            label={step.label}
+            description={step.description}
+            icon={activeStep === index ? icons?.active : undefined}
+          >
+            <div className="mt-6">{step.component}</div>
+          </Stepper.Step>
+        ))}
+      </Stepper>
 
-        {footer?.({
-          nextStep: handleNext,
-          prevStep,
-          isLastStep,
-          activeStep,
-          methods,
-        })}
-      </form>
-    </FormProvider>
+      {footer?.({
+        nextStep: handleNext,
+        prevStep,
+        isLastStep,
+        activeStep,
+        methods,
+      })}
+    </form>
   );
 };
