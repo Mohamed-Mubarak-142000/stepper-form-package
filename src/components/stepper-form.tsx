@@ -32,6 +32,9 @@ type StepperFormProps<T extends FieldValues> = {
     isLastStep: boolean;
     activeStep: number;
     methods: UseFormReturn<T>;
+    resetSteps: () => void;
+    isFirstStep: boolean;
+    totalSteps: number;
   }) => React.ReactNode;
   footer?: (props: {
     nextStep: () => Promise<void>;
@@ -39,6 +42,9 @@ type StepperFormProps<T extends FieldValues> = {
     isLastStep: boolean;
     activeStep: number;
     methods: UseFormReturn<T>;
+    resetSteps: () => void;
+    isFirstStep: boolean;
+    totalSteps: number;
   }) => React.ReactNode;
   formMethods?: UseFormReturn<T>;
   formOptions?: UseFormProps<T>;
@@ -122,6 +128,9 @@ export const StepperForm = <T extends FieldValues>({
         prevStep,
         isLastStep,
         activeStep,
+        resetSteps: internalMethods.reset,
+        isFirstStep: activeStep === 0,
+        totalSteps: steps.length,
         methods,
       })}
 
@@ -149,6 +158,9 @@ export const StepperForm = <T extends FieldValues>({
         isLastStep,
         activeStep,
         methods,
+        resetSteps: internalMethods.reset,
+        isFirstStep: activeStep === 0,
+        totalSteps: steps.length,
       })}
     </form>
   );

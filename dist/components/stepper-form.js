@@ -99,18 +99,18 @@ var StepperForm = function (_a) {
             }
         });
     }); }, [activeStep, steps, trigger, clearErrors]);
-    return ((0, jsx_runtime_1.jsx)(react_hook_form_1.FormProvider, __assign({}, methods, { children: (0, jsx_runtime_1.jsxs)("form", __assign({ onSubmit: handleSubmit(onSubmit), className: "w-full" }, { children: [header === null || header === void 0 ? void 0 : header({
-                    nextStep: handleNext,
-                    prevStep: prevStep,
-                    isLastStep: isLastStep,
-                    activeStep: activeStep,
-                    methods: methods,
-                }), (0, jsx_runtime_1.jsx)(core_1.Stepper, __assign({ className: "p-10 rounded-xl bg-basic-white shadow-form-sheet", active: activeStep, completedIcon: icons === null || icons === void 0 ? void 0 : icons.completed }, stepperProps, { children: steps.map(function (step, index) { return ((0, jsx_runtime_1.jsx)(core_1.Stepper.Step, __assign({ label: step.label, description: step.description, icon: activeStep === index ? icons === null || icons === void 0 ? void 0 : icons.active : undefined }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: "mt-6" }, { children: step.component })) }), index)); }) })), footer === null || footer === void 0 ? void 0 : footer({
-                    nextStep: handleNext,
-                    prevStep: prevStep,
-                    isLastStep: isLastStep,
-                    activeStep: activeStep,
-                    methods: methods,
-                })] })) })));
+    return ((0, jsx_runtime_1.jsxs)("form", __assign({ onSubmit: handleSubmit(onSubmit), className: "w-full" }, { children: [header === null || header === void 0 ? void 0 : header({
+                nextStep: handleNext,
+                prevStep: prevStep,
+                isLastStep: isLastStep,
+                activeStep: activeStep,
+                methods: methods,
+            }), (0, jsx_runtime_1.jsx)(core_1.Stepper, __assign({ className: "p-10 rounded-xl bg-basic-white shadow-form-sheet", active: activeStep, completedIcon: icons === null || icons === void 0 ? void 0 : icons.completed }, stepperProps, { children: steps.map(function (step, index) { return ((0, jsx_runtime_1.jsx)(core_1.Stepper.Step, __assign({ label: step.label, description: step.description, icon: activeStep === index ? icons === null || icons === void 0 ? void 0 : icons.active : undefined }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: "mt-6" }, { children: step.component })) }), index)); }) })), footer === null || footer === void 0 ? void 0 : footer({
+                nextStep: handleNext,
+                prevStep: prevStep,
+                isLastStep: isLastStep,
+                activeStep: activeStep,
+                methods: methods,
+            })] })));
 };
 exports.StepperForm = StepperForm;
